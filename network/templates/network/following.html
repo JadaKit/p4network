@@ -1,0 +1,42 @@
+{% extends "network/layout.html" %}
+{% load static %}
+
+{% block body %}
+    <div class="container">
+        <div class="postsList">
+            {% for post in posts %}
+                <div class="postItem">
+                    <div class="postHeader">
+                        <a href="{% url 'profile' username=post.owner.username %}" class="postOwner"><strong>{{ post.owner }}</strong></a>
+                        <p class="postDate">{{ post.date }}</p>
+                    </div>
+                    <div class="postBody">
+                        <p class="postText">
+                            {{post.content}}
+                        </p>
+                    </div>
+                    <div class="postFooter">
+                        <div data-post-id="{{ post.id }}" class="postLikeBtn likes {% if user in post.likes.all %}active{% endif %}">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"/>
+                            </svg>
+                            <p id="postLikeCounter" class="likeCount">{{ post.likes.count }}</p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+        <div class="paginationBlock">
+            <nav aria-label="Page navigation">
+                <ul class="pagination">
+                    {% for i in posts.paginator.page_range %}
+                        <li class="page-item{% if i == posts.number %} active{% endif %}">
+                            <a class="page-link" href="?page={{ i }}">{{ i }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </nav>
+        </div>
+    </div>
+{% endblock %}

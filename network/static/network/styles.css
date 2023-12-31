@@ -1,0 +1,157 @@
+.container{
+    margin: 0px auto;
+    padding: 0px 20px;
+    max-width: 1440px;
+}
+
+.postForm{
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.postForm textarea, .editTextArea {
+    width: 100%;
+    height: 100px;
+    border: 1px solid grey;
+    border-radius: 5px;
+    padding: 10px;
+    resize: none;
+    outline: none;
+    margin-bottom: 10px;
+
+}
+
+.postBtn{
+    width: 100px;
+    margin-top: 5px;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: #00A9FF;
+    color: white;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.postBtn:hover{
+    background-color: #3876BF;
+}
+
+.postsList{
+    width: 100%;
+    margin-top: 20px;
+}
+
+.postItem{
+    border: 1px solid grey;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.postHeader{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.postFooter{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.editPostBtn, .savePostBtn{
+    padding: 5px 20px;
+    border: none;
+    border-radius: 5px;
+
+    transition: background-color 0.2s ease-in-out;
+}
+
+.editPostBtn:hover, .savePostBtn:hover{
+    cursor: pointer;
+    background-color: #00A9FF;
+}
+
+.postDate{
+    margin: 0px;
+    padding: 0px;
+}
+
+.postText{
+    margin: 10px 0px;
+}
+
+.likes{
+    display: flex;
+    align-items: center;
+
+}
+
+.likes svg path{
+    fill: grey;
+    transition: fill 0.1s ease-in-out;
+}
+
+.likes.active svg path{
+    fill: red;
+}
+
+.likes.active:hover svg path{
+    cursor: pointer;
+    fill: red;
+}
+
+.likes:hover svg path{
+    cursor: pointer;
+    fill: black;
+}
+
+.likeCount{
+    margin: 0px;
+    margin-left: 5px;
+}
+
+.paginationBlock{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.userInfo{
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.userInfo h2{
+    margin: 0px;
+    padding: 0px;
+}
+
+.mainData{
+    display: flex;
+    align-items: center;
+    gap: 20px
+}
+
+.mainData form input{
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+.functions{
+    display: flex;
+    text-align: center;
+    gap: 40px
+}
+
+.followers p, .following p{
+    margin: 0px;
+    p0adding: 0px;
+}
